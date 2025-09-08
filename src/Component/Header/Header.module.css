@@ -1,14 +1,30 @@
 header {
+    font-family: Arial, Helvetica, sans-serif;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
     padding: 12px;
-    box-shadow: 0px 5px 7px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.1);
+}
+
+.shop-logo {
+    font-size: 0.9em;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ff7e5f;
+}
+
+input {
+    padding: 5px 3px 5px 3px;
 }
 
 .header-content {
-    font-family: Arial, Helvetica, sans-serif;
     display: flex;
     font-weight: 450;
+    align-items: center;
     gap: 12px;
 
 }
