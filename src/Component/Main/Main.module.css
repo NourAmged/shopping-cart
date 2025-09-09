@@ -12,8 +12,8 @@ h1 {
 }
 
 img {
-    width: 400px;
-    height: 350px;
+    width: 500px;
+    max-height: 335px;
     object-fit: cover;
     display: block;
     border-radius: 12px;
@@ -21,7 +21,12 @@ img {
 
 button {
     cursor: pointer;
-    width: 15%;
+    color: white;
+    background-color: black;
+    padding: 12px 8px 12px 8px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
 }
 
 .welcome-section {
@@ -29,6 +34,8 @@ button {
     justify-content: space-around;
     flex-wrap: wrap;
     align-items: center;
+    padding: 28px;
+    gap: 22px;
     height: 330px;
     width: 72vw;
     background: linear-gradient(135deg, #feb47b, #ff7e5f);

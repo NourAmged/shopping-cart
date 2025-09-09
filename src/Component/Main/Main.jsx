@@ -7,7 +7,7 @@ function Main() {
             <section className={styles["welcome-section"]}>
                 <div className={styles["welcome-section-txt"]}>
                     <h1>Discover Your Style</h1>
-                    <p>Explore the latest trends and shop your favorite products now.</p>
+                    <p>Explore the latest trends and shop your favorite <br /> products now.</p>
                     <button>Shop Now</button>
                 </div>
                 <img src={image} />
