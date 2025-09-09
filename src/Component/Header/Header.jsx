@@ -13,7 +13,7 @@ function Header() {
                 <p>Shop</p>
                 <p>About</p>
                 <input type="text" placeholder="Search products..." />
-                <IoCartOutline size={'22px'} />
+                <IoCartOutline size={'24px'} />
             </div>
         </header>
     );
