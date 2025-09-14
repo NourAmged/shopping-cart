@@ -1,16 +1,24 @@
 import styles from "./Main.module.css";
-import image from "../../assets/shopping-DaW05CRc.jpg";
+import { useEffect, useState } from "react";
+import fetchData from "./fetchData";
+import HeaderSection from "./HeaderSection/HeaderSection";
 
 function Main() {
+    const [json, setJson] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        fetchData(setJson, setLoading);
+    }, []);
+
+    if (loading)
+        return (<p>loading</p>);
+
     return (
         <main>
-            <section className={styles["welcome-section"]}>
-                <div className={styles["welcome-section-txt"]}>
-                    <h1>Discover Your Style</h1>
-                    <p>Explore the latest trends and shop your favorite <br /> products now.</p>
-                    <button>Shop Now</button>
-                </div>
-                <img src={image} />
+            <HeaderSection />
+            <section >
+
             </section>
         </main>
     );
