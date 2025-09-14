@@ -2,6 +2,7 @@ import styles from "./Main.module.css";
 import { useEffect, useState } from "react";
 import fetchData from "./fetchData";
 import HeaderSection from "./HeaderSection/HeaderSection";
+import BodySection from "./BodySection/BodySection";
 
 function Main() {
     const [json, setJson] = useState(null);
@@ -17,9 +18,7 @@ function Main() {
     return (
         <main>
             <HeaderSection />
-            <section >
-
-            </section>
+            <BodySection  data={json}/>
         </main>
     );
 
