@@ -1,3 +1,7 @@
+h2{
+    margin: 12px;
+}
+
 .body-section {
     display: flex;
     flex-direction: column;
@@ -17,8 +21,10 @@
 .product {
     display: flex;
     flex-direction: column;
-    width: 600px;
+    flex: 1 1 200px; 
+    max-width: 600px;
     align-items: stretch;
+    gap: 12px;
     justify-content: space-between;
     background-color: #fff;
     border: 1px solid #eaeaea;
@@ -26,7 +32,7 @@
     padding: 22px;
 }
 
-.product div{
+.product div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,5 +43,18 @@
 
 .product img {
     width: 200px;
- 
+    height: 300px;
+    padding: 22px;
+}
+
+.product-price {
+    font-size: 1em;
+    font-weight: 800;
+    color: #ff7e5f;
+    text-align: center;
+}
+
+.product-title {
+    font-size: 1em;
+    font-weight: 550;
 }

@@ -6,7 +6,7 @@ function Header() {
     return (
         <header>
             <div className={styles["shop-logo"]}>
-                <CiShop size={"32px"} /> What a Shop
+                <CiShop size={'32px'} /> What a Shop
             </div>
             <div className={styles["header-content"]}>
                 <p>Home</p>

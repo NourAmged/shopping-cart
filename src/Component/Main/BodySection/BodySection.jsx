@@ -7,8 +7,8 @@ function Product({ data }) {
             <div>
                 <img src={data["image"]} alt="product" />
             </div>
-            <p>{data["title"]}</p>
-            <p>{data["price"]}</p>
+            <p className={styles["product-title"]}>{data["title"]}</p>
+            <p className={styles["product-price"]}>{"$" + data["price"]}</p>
             <button>Add to Cart</button>
         </div>
     );
