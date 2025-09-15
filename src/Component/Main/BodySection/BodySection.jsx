@@ -30,7 +30,12 @@ function BodySection({ data }) {
                 <button className={styles["category-btn"]}>Accessories</button>
                 <button className={styles["category-btn"]}>Electronics</button>
             </div>
-            <div></div>
+            <div className={styles["discount-container"]}>
+                <p>Get 20% Off Your First Order</p>
+                <button className={styles["shopping-btn"]}>
+                    Start Shopping
+                </button>
+            </div>
         </section>
     );
 }
