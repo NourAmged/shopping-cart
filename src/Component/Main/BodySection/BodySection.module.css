@@ -67,12 +67,31 @@ h2 {
     font-weight: 550;
 }
 
-.product-btn{
+.product-btn {
     composes: header-btn from '../HeaderSection/HeaderSection.module.css';
     transition: background-color 0.4s;
 }
 
-.product-btn:hover{
+.product-btn:hover {
     transform: none;
     background-color: #ff7e5f;
+}
+
+.category-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 70vw;
+    margin: 12px;
+    gap: 22px;
+    justify-content: space-around;
+}
+
+.category-btn {
+    background-color: white;
+    border: none;
+    width: 250px;
+    height: 70px;
+    font-weight: 550;
+    font-size: 1em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }

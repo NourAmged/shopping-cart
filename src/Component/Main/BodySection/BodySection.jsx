@@ -23,8 +23,13 @@ function BodySection({ data }) {
                 <Product data={data[1]} />
                 <Product data={data[2]} />
             </div>
-            <div></div>
             <h2>Shop by Category</h2>
+            <div className={styles["category-container"]}>
+                <button className={styles["category-btn"]}>Men</button>
+                <button className={styles["category-btn"]}>Women</button>
+                <button className={styles["category-btn"]}>Accessories</button>
+                <button className={styles["category-btn"]}>Electronics</button>
+            </div>
             <div></div>
         </section>
     );
