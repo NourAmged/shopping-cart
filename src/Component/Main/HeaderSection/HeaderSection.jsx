@@ -7,7 +7,7 @@ function HeaderSection() {
             <div className={styles["welcome-section-txt"]}>
                 <h1>Discover Your Style</h1>
                 <p>Explore the latest trends and shop your favorite <br /> products now.</p>
-                <button>Shop Now</button>
+                <button className={styles["header-btn"]}>Shop Now</button>
             </div>
             <img src={image} />
         </section>
