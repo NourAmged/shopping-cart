@@ -23,7 +23,6 @@ h2 {
     flex-direction: column;
     flex: 1 1 200px;
     max-width: 600px;
-    align-items: stretch;
     gap: 12px;
     justify-content: space-between;
     background-color: #fff;
@@ -66,6 +65,7 @@ h2 {
 
 .product-btn {
     composes: header-btn from '../HeaderSection/HeaderSection.module.css';
+    width: 100%;
     transition: background-color 0.4s;
 }
 

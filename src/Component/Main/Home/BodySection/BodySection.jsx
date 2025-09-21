@@ -1,7 +1,9 @@
 import styles from "./BodySection.module.css";
-import { Link } from "react-router";
+import { useNavigate } from 'react-router';
 
 function Product({ data }) {
+    const navigate = useNavigate();
+
     return (
         <div className={styles["product"]}>
             <div>
@@ -9,7 +11,7 @@ function Product({ data }) {
             </div>
             <p className={styles["product-title"]}>{data["title"]}</p>
             <p className={styles["product-price"]}>{"$" + data["price"]}</p>
-            <Link to="second"><button className={styles["product-btn"]}>Add to Cart</button></Link>
+            <button className={styles["product-btn"]} onClick={() => navigate('/second')}>Add to Cart</button>
         </div>
     );
 }

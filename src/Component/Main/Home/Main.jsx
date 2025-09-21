@@ -4,6 +4,7 @@ import fetchData from "./fetchData";
 import HeaderSection from "./HeaderSection/HeaderSection";
 import BodySection from "./BodySection/BodySection";
 
+
 function Main() {
     const [json, setJson] = useState(null);
     const [loading, setLoading] = useState(true);
