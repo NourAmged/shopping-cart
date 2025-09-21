@@ -1,5 +1,5 @@
 import styles from "./HeaderSection.module.css";
-import image from "../../../assets/shopping-DaW05CRc.jpg";
+import image from "../../../../assets/shopping-DaW05CRc.jpg";
 
 function HeaderSection() {
     return (

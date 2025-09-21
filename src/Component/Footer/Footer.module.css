@@ -15,26 +15,26 @@ form {
     gap: 12px;
 }
 
-.subscribe-btn {
-    composes: header-btn from '../Main/HeaderSection/HeaderSection.module.css';
-    padding: 12px 22px 12px 22px;
-    font-weight: 600;
-}
-
-.email {
-    width: 30vw;
-}
-
-
 h3 {
     color: white;
     font-weight: 600;
     font-size: 2em;
 }
 
-h4{
+h4 {
     font-size: 1.5em;
     margin-bottom: 12px;
+}
+
+
+.subscribe-btn {
+    composes: header-btn from '../Main/Home/HeaderSection/HeaderSection.module.css';
+    padding: 12px 22px 12px 22px;
+    font-weight: 600;
+}
+
+.email {
+    width: 30vw;
 }
 
 .subscribe {

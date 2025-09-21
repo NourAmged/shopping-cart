@@ -1,5 +1,5 @@
 import styles from "./BodySection.module.css";
-
+import { Link } from "react-router";
 
 function Product({ data }) {
     return (
@@ -9,7 +9,7 @@ function Product({ data }) {
             </div>
             <p className={styles["product-title"]}>{data["title"]}</p>
             <p className={styles["product-price"]}>{"$" + data["price"]}</p>
-            <button className={styles["product-btn"]}>Add to Cart</button>
+            <Link to="second"><button className={styles["product-btn"]}>Add to Cart</button></Link>
         </div>
     );
 }
