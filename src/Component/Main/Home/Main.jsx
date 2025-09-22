@@ -3,23 +3,33 @@ import { useEffect, useState } from "react";
 import fetchData from "./fetchData";
 import HeaderSection from "./HeaderSection/HeaderSection";
 import BodySection from "./BodySection/BodySection";
-
+import ProductItem from "../ProductItem/ProductItem";
+import { Route, Routes } from "react-router";
 
 function Main() {
-    const [json, setJson] = useState(null);
+    const [data, setData] = useState(null);
+    const [selectedItem, setSelectedItem] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetchData(setJson, setLoading);
+        fetchData(setData, setLoading);
     }, []);
 
     if (loading)
         return (<p>loading</p>);
 
+    console.log(data[0])
+
     return (
         <main>
-            <HeaderSection />
-            <BodySection  data={json}/>
+            <Routes>
+                <Route path="/" element={
+                    <>
+                        <HeaderSection />
+                        <BodySection data={data} setSelectedItem = {setSelectedItem} />
+                    </>} />
+                <Route path="/second" element={<ProductItem selectedItem = {selectedItem}/>} />
+            </Routes>
         </main>
     );
 

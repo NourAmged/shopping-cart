@@ -1,29 +1,31 @@
 import styles from "./BodySection.module.css";
 import { useNavigate } from 'react-router';
 
-function Product({ data }) {
+function Product({ item, setSelectedItem }) {
     const navigate = useNavigate();
 
     return (
-        <div className={styles["product"]}>
+        <div className={styles["product"]} onClick={() => { setSelectedItem(item); navigate('/second') }}>
             <div>
-                <img src={data["image"]} alt="product" />
+                <img src={item["image"]} alt="product" />
             </div>
-            <p className={styles["product-title"]}>{data["title"]}</p>
-            <p className={styles["product-price"]}>{"$" + data["price"]}</p>
-            <button className={styles["product-btn"]} onClick={() => navigate('/second')}>Add to Cart</button>
+            <p className={styles["product-title"]}>{item["title"]}</p>
+            <p className={styles["product-price"]}>{"$" + item["price"]}</p>
+            <button className={styles["product-btn"]} onClick={(e) => { e.stopPropagation() }} >Add to Cart</button>
         </div>
     );
 }
 
-function BodySection({ data }) {
+function BodySection({ data, setSelectedItem }) {
+
     return (
         <section className={styles["body-section"]}>
             <h2>Featured Products</h2>
             <div className={styles["product-container"]}>
-                <Product data={data[0]} />
-                <Product data={data[1]} />
-                <Product data={data[2]} />
+                {data.slice(0, 3).map((item, index) => (
+                    <Product key={index} item={item} setSelectedItem={setSelectedItem} />
+                ))}
+
             </div>
             <h2>Shop by Category</h2>
             <div className={styles["category-container"]}>
