@@ -6,9 +6,12 @@ function ProductItem({ selectedItem }) {
     return (
         <>
             <div className={styles["product-item"]}>
-                <img src={selectedItem["image"]} />
-                <div>
-                    <p>{selectedItem["title"]}</p>
+                <div className={styles["product-img-container"]}>
+
+                    <img src={selectedItem["image"]} className={styles["product-img"]} />
+                </div>
+                <div className={styles["product-information"]}>
+                    <p className={styles["product-title"]}>{selectedItem["title"]}</p>
                     <p>{selectedItem["price"]}</p>
                     <p>{selectedItem["category"]}</p>
                     <p>{selectedItem["description"]}</p>
