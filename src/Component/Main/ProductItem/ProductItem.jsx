@@ -12,11 +12,23 @@ function ProductItem({ selectedItem }) {
                 </div>
                 <div className={styles["product-information"]}>
                     <p className={styles["product-title"]}>{selectedItem["title"]}</p>
-                    <p>{selectedItem["price"]}</p>
-                    <p>{selectedItem["category"]}</p>
-                    <p>{selectedItem["description"]}</p>
+                    <p className={styles["product-price"]}>${selectedItem["price"]}</p>
+                    <p className={styles["product-category"]}>{selectedItem["category"]}</p>
+                    <p className={styles["product-description"]}>{selectedItem["description"]}</p>
+                    <div className={styles["color-pick-container"]}>
+                        <p>Select Color</p>
+                        <div className={styles["color-container"]}>
+                            <button className={styles["black-color"]}></button>
+                            <button className={styles["red-color"]}></button>
+                            <button className={styles["blue-color"]}></button>
+                            <button className={styles["green-color"]}></button>
+                            <button className={styles["yellow-color"]}></button>
+                            <button className={styles["purple-color"]}></button>
+                            <button className={styles["orange-color"]}></button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </div >
         </>
     );
 }
