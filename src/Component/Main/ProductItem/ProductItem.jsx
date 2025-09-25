@@ -27,6 +27,20 @@ function ProductItem({ selectedItem }) {
                             <button className={styles["orange-color"]}></button>
                         </div>
                     </div>
+                    <div className={styles["size-container"]}>
+                        <p>Select Size</p>
+                        <div className={styles["size"]}>
+                            <button>XS</button>
+                            <button>S</button>
+                            <button>M</button>
+                            <button>L</button>
+                            <button>XL</button>
+                        </div>
+                    </div>
+                    <div>
+                        <button></button>
+                        <button>Add to Cart</button>
+                    </div>
                 </div>
             </div >
         </>

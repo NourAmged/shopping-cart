@@ -71,6 +71,11 @@
     gap: 12px;
 }
 
+.color-pick-container p,  .size-container p {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
 .color-container button:focus {
     border: 2px solid black;
 }
@@ -116,4 +121,29 @@
 .orange-color {
     composes: circle;
     background-color: orange;
+}
+
+.size-container {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.size {
+    display: flex;
+    gap: 12px;
+}
+
+.size button {
+    font-size: 1.1em;
+    padding: .4rem .8rem;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.size button:focus {
+    color: white;
+    background-color: #333;
 }
