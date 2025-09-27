@@ -1,3 +1,7 @@
+nav {
+    width: 100%;
+}
+
 .product-item {
     display: flex;
     max-width: 1200px;
@@ -71,7 +75,8 @@
     gap: 12px;
 }
 
-.color-pick-container p,  .size-container p {
+.color-pick-container p,
+.size-container p {
     font-size: 1.2em;
     font-weight: 700;
 }
@@ -146,4 +151,24 @@
 .size button:focus {
     color: white;
     background-color: #333;
+}
+
+.add-cart {
+    cursor: pointer;
+    color: white;
+    background-color: #ff7e5f;
+    font-size: 1.2em;
+    font-weight: 550;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px 8px 12px;
+    margin-left: 12px;
+}
+
+.add-cart:hover {
+    background-color: #d76c51;
+}
+
+.add-quantity {
+    padding-left: 50px;
 }

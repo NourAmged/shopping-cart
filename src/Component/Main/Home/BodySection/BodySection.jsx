@@ -5,7 +5,7 @@ function Product({ item, setSelectedItem }) {
     const navigate = useNavigate();
 
     return (
-        <div className={styles["product"]} onClick={() => { setSelectedItem(item); navigate('/second') }}>
+    <div className={styles["product"]} onClick={() => { setSelectedItem(item); navigate('/shop/item') }}>
             <div>
                 <img src={item["image"]} alt="product" />
             </div>

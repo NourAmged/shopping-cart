@@ -1,17 +1,21 @@
 import styles from "./Header.module.css";
 import { IoCartOutline } from "react-icons/io5";
 import { CiShop } from "react-icons/ci";
+import { useNavigate } from "react-router";
 
 function Header() {
+
+    const navigate = useNavigate();
+
     return (
         <header>
-            <div className={styles["shop-logo"]}>
+            <button className={styles["shop-logo"]} onClick={() => navigate("/")}>
                 <CiShop size={'32px'} /> What a Shop
-            </div>
+            </button>
             <div className={styles["header-content"]}>
-                <p>Home</p>
-                <p>Shop</p>
-                <p>About</p>
+                <button className={styles["home-btn"]} onClick={() => navigate("/")}>Home</button>
+                <button className={styles["shop-btn"]}>Shop</button>
+                <button className={styles["about-btn"]}>About</button>
                 <input type="text" placeholder="Search products..." />
                 <IoCartOutline size={'24px'} />
             </div>

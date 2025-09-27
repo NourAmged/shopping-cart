@@ -6,8 +6,10 @@ function ProductItem({ selectedItem }) {
     return (
         <>
             <div className={styles["product-item"]}>
+                <nav>
+                    Home &#8594; Shop &#8594; {selectedItem["title"]}
+                </nav>
                 <div className={styles["product-img-container"]}>
-
                     <img src={selectedItem["image"]} className={styles["product-img"]} />
                 </div>
                 <div className={styles["product-information"]}>
@@ -38,8 +40,8 @@ function ProductItem({ selectedItem }) {
                         </div>
                     </div>
                     <div>
-                        <button></button>
-                        <button>Add to Cart</button>
+                        <input className={styles["add-quantity"]} type="number" min="1" max="5" placeholder="1" />
+                        <button className={styles["add-cart"]}>Add to Cart</button>
                     </div>
                 </div>
             </div >

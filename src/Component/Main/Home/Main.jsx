@@ -28,7 +28,7 @@ function Main() {
                         <HeaderSection />
                         <BodySection data={data} setSelectedItem = {setSelectedItem} />
                     </>} />
-                <Route path="/second" element={<ProductItem selectedItem = {selectedItem}/>} />
+                <Route path="/shop/item" element={<ProductItem selectedItem = {selectedItem}/>} />
             </Routes>
         </main>
     );
