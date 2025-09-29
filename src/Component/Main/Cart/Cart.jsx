@@ -1,14 +1,16 @@
+import styles from './Cart.module.css';
+
 function Cart() {
     return (
-        <div>
+        <div className={styles["cart"]}>
             <nav>
                 Home &#8594; Cart
             </nav>
             <p>Your Shoping Cart</p>
             <div>
-                your shoping cart is empty
+                <p>your shoping cart is empty</p>
+                <button>Continue Shopping</button>
             </div>
-            <button>Continue Shopping</button>
         </div>
     );
 }

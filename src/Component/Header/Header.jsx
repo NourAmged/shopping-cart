@@ -17,7 +17,7 @@ function Header() {
                 <button className={styles["shop-btn"]}>Shop</button>
                 <button className={styles["about-btn"]}>About</button>
                 <input type="text" placeholder="Search products..." />
-                <IoCartOutline size={'24px'} />
+                <IoCartOutline style={{ cursor: "pointer" }} onClick={() => navigate("/cart")} size={'24px'} />
             </div>
         </header>
     );

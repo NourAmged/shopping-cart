@@ -4,6 +4,7 @@ import fetchData from "./fetchData";
 import HeaderSection from "./HeaderSection/HeaderSection";
 import BodySection from "./BodySection/BodySection";
 import ProductItem from "../ProductItem/ProductItem";
+import Cart from "../Cart/Cart";
 import { Route, Routes } from "react-router";
 
 function Main() {
@@ -26,9 +27,10 @@ function Main() {
                 <Route path="/" element={
                     <>
                         <HeaderSection />
-                        <BodySection data={data} setSelectedItem = {setSelectedItem} />
+                        <BodySection data={data} setSelectedItem={setSelectedItem} />
                     </>} />
-                <Route path="/shop/item" element={<ProductItem selectedItem = {selectedItem}/>} />
+                <Route path="/shop/item" element={<ProductItem selectedItem={selectedItem} />} />
+                <Route path="/cart" element={<Cart />} />
             </Routes>
         </main>
     );
