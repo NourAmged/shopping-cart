@@ -40,7 +40,7 @@ function ProductItem({ selectedItem }) {
                         </div>
                     </div>
                     <div>
-                        <input className={styles["add-quantity"]} type="number" min="1" max="5" placeholder="1" />
+                        <input className={styles["add-quantity"]} type="number" min="1" max="5" placeholder="0" />
                         <button className={styles["add-cart"]}>Add to Cart</button>
                     </div>
                 </div>
