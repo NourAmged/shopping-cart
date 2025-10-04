@@ -6,10 +6,10 @@ function Cart() {
             <nav>
                 Home &#8594; Cart
             </nav>
-            <p>Your Shoping Cart</p>
-            <div>
+            <p style={{fontSize:"1.5em", fontWeight:"550"}}>Your Shoping Cart</p>
+            <div className={styles["no-items"]}>
                 <p>your shoping cart is empty</p>
-                <button>Continue Shopping</button>
+                <button className={styles["shopping-btn"]}>Continue Shopping</button>
             </div>
         </div>
     );

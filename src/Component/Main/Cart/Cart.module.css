@@ -6,3 +6,18 @@
     padding: 2rem 1rem;
     gap: 2rem;
 }
+
+.no-items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 44px
+}
+
+.no-items p {
+    font-size: 1.2em;
+}
+
+.shopping-btn {
+    composes: header-btn from "../Home/HeaderSection/HeaderSection.module.css";
+}
