@@ -1,11 +1,28 @@
 import styles from "./BodySection.module.css";
 import { useNavigate } from 'react-router';
 
-function Product({ item, setSelectedItem }) {
+
+function addToCart(setPurchasedItem, purchasedItem, product) {
+    if(!purchasedItem){
+        product["amount"] = 1;
+        setPurchasedItem(purchasedItem.push(product))
+        return;
+    }
+
+    // purchasedItem.forEach(item => {
+    //     if(item["id"] === product["id"]){
+            
+    //         setPurchasedItem()
+    //     }
+            
+    // });
+}
+
+function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem }) {
     const navigate = useNavigate();
 
     return (
-    <div className={styles["product"]} onClick={() => { setSelectedItem(item); navigate('/shop/item') }}>
+        <div className={styles["product"]} onClick={() => { setSelectedItem(item); navigate('/shop/item') }}>
             <div>
                 <img src={item["image"]} alt="product" />
             </div>
@@ -16,14 +33,14 @@ function Product({ item, setSelectedItem }) {
     );
 }
 
-function BodySection({ data, setSelectedItem }) {
+function BodySection({ data, setSelectedItem, setPurchasedItem, purchasedItem }) {
 
     return (
         <section className={styles["body-section"]}>
             <h2>Featured Products</h2>
             <div className={styles["product-container"]}>
                 {data.slice(0, 3).map((item, index) => (
-                    <Product key={index} item={item} setSelectedItem={setSelectedItem} />
+                    <Product key={index} item={item} setSelectedItem={setSelectedItem} setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} />
                 ))}
 
             </div>
