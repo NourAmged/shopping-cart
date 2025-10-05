@@ -20,18 +20,16 @@ function Main() {
     if (loading)
         return (<p>loading</p>);
 
-    console.log(data[0])
-
     return (
         <main>
             <Routes>
                 <Route path="/" element={
                     <>
                         <HeaderSection />
-                        <BodySection data={data} setSelectedItem={setSelectedItem} setPurchased={setPurchasedItem} purchasedItem={purchasedItem} />
+                        <BodySection data={data} setSelectedItem={setSelectedItem} setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} />
                     </>} />
                 <Route path="/shop/item" element={<ProductItem selectedItem={selectedItem} />} />
-                <Route path="/cart" element={<Cart />} />
+                <Route path="/cart" element={<Cart purchasedItem = {purchasedItem} />} />
             </Routes>
         </main>
     );

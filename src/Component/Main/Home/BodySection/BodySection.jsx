@@ -3,20 +3,19 @@ import { useNavigate } from 'react-router';
 
 
 function addToCart(setPurchasedItem, purchasedItem, product) {
-    if(!purchasedItem){
-        product["amount"] = 1;
-        setPurchasedItem(purchasedItem.push(product))
-        return;
-    }
+    const existingItem = purchasedItem.find(item => item.id === product.id);
 
-    // purchasedItem.forEach(item => {
-    //     if(item["id"] === product["id"]){
-            
-    //         setPurchasedItem()
-    //     }
-            
-    // });
+    if (existingItem) {
+        const updatedCart = purchasedItem.map(item =>
+            item.id === product.id ? { ...item, amount: item.amount + 1 } : item
+        );
+        setPurchasedItem(updatedCart);
+    } else {
+        const updatedCart = [...purchasedItem, { ...product, amount: 1 }];
+        setPurchasedItem(updatedCart);
+    }
 }
+
 
 function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem }) {
     const navigate = useNavigate();
@@ -28,7 +27,7 @@ function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem }) {
             </div>
             <p className={styles["product-title"]}>{item["title"]}</p>
             <p className={styles["product-price"]}>{"$" + item["price"]}</p>
-            <button className={styles["product-btn"]} onClick={(e) => { e.stopPropagation() }} >Add to Cart</button>
+            <button className={styles["product-btn"]} onClick={(e) => { e.stopPropagation(); addToCart(setPurchasedItem, purchasedItem, item) }} >Add to Cart</button>
         </div>
     );
 }
