@@ -1,20 +1,7 @@
 import styles from "./BodySection.module.css";
+import addToCart from "../addToCart";
 import { useNavigate } from 'react-router';
 
-
-function addToCart(setPurchasedItem, purchasedItem, product) {
-    const existingItem = purchasedItem.find(item => item.id === product.id);
-
-    if (existingItem) {
-        const updatedCart = purchasedItem.map(item =>
-            item.id === product.id ? { ...item, amount: item.amount + 1 } : item
-        );
-        setPurchasedItem(updatedCart);
-    } else {
-        const updatedCart = [...purchasedItem, { ...product, amount: 1 }];
-        setPurchasedItem(updatedCart);
-    }
-}
 
 
 function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem }) {
