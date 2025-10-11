@@ -28,8 +28,8 @@ function Main() {
                         <HeaderSection />
                         <BodySection data={data} setSelectedItem={setSelectedItem} setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} />
                     </>} />
-                <Route path="/shop/item" element={<ProductItem selectedItem={selectedItem} />} />
-                <Route path="/cart" element={<Cart purchasedItem = {purchasedItem} />} />
+                <Route path="/shop/item" element={<ProductItem setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} selectedItem={selectedItem} />} />
+                <Route path="/cart" element={<Cart purchasedItem={purchasedItem} />} />
             </Routes>
         </main>
     );

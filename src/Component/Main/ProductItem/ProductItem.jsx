@@ -1,8 +1,11 @@
 import styles from "./ProductItem.module.css";
+import addToCart from "../Home/addToCart";
+import { useRef } from "react";
 
-function ProductItem({ selectedItem }) {
+function ProductItem({setPurchasedItem, purchasedItem, selectedItem }) {
 
-    console.log(selectedItem);
+    const quantityRef = useRef(1);
+
     return (
         <>
             <div className={styles["product-item"]}>
@@ -40,8 +43,13 @@ function ProductItem({ selectedItem }) {
                         </div>
                     </div>
                     <div>
-                        <input className={styles["add-quantity"]} type="number" min="1" max="5" placeholder="0" />
-                        <button className={styles["add-cart"]}>Add to Cart</button>
+                        <input className={styles["add-quantity"]} type="number" min="1" max="5" placeholder="1" ref = {quantityRef}/>
+                        <button className={styles["add-cart"]} onClick={(e) => {
+                            e.stopPropagation(); 
+                            const quantity = Number(quantityRef.current.value) || 1;
+                            addToCart(setPurchasedItem, purchasedItem, selectedItem, quantity);
+                        }
+                    }>Add to Cart</button>
                     </div>
                 </div>
             </div >

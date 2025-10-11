@@ -7,7 +7,7 @@ function addToCart(setPurchasedItem, purchasedItem, product, quantity = 1) {
         );
         setPurchasedItem(updatedCart);
     } else {
-        const updatedCart = [...purchasedItem, { ...product, amount: 1 }];
+        const updatedCart = [...purchasedItem, { ...product, amount: quantity }];
         setPurchasedItem(updatedCart);
     }
 }
