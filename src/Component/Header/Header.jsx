@@ -22,7 +22,9 @@ function Header({ purchasedItem }) {
                 <input type="text" placeholder="Search products..." />
                 <div>
                     <IoCartOutline style={{ cursor: "pointer" }} onClick={() => navigate("/cart")} size={'24px'} />
-                    <span className={styles["total-amount"]} >{totalAmount === 0 ? "" : totalAmount}</span>
+                    {
+                        totalAmount === 0 ? "" : <span className={styles["total-amount"]}>{totalAmount}</span>
+                    }
                 </div>
             </div>
         </header>
