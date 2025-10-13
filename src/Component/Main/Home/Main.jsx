@@ -7,10 +7,9 @@ import ProductItem from "../ProductItem/ProductItem";
 import Cart from "../Cart/Cart";
 import { Route, Routes } from "react-router";
 
-function Main() {
+function Main({ purchasedItem, setPurchasedItem }) {
     const [data, setData] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
-    const [purchasedItem, setPurchasedItem] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
