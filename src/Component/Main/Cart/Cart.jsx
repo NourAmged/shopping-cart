@@ -24,18 +24,16 @@ function Cart({ purchasedItem }) {
                         <div className={styles["items"]}>
                             {purchasedItem.map((item, index) => {
                                 return (
-                                    <div key={index}>
-                                        <div className={styles["item"]}>
-                                            <div className={styles["product-image-container"]}>
-                                                <img className={styles["product-image"]} src={item.image} alt="product item" />
-                                            </div>
-                                            <div>
-                                                <p>{item.title}</p>
-                                                <p>${item.price}</p>
-                                                <p>quantity: {item.amount}</p>
-                                            </div>
-                                        </div>
 
+                                    <div key={index} className={styles["item"]}>
+                                        <div className={styles["product-image-container"]}>
+                                            <img className={styles["product-image"]} src={item.image} alt="product item" />
+                                        </div>
+                                        <div>
+                                            <p>{item.title}</p>
+                                            <p>${item.price}</p>
+                                            <p>quantity: {item.amount}</p>
+                                        </div>
                                     </div>
                                 );
                             })}
