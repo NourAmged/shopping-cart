@@ -1,6 +1,14 @@
 import styles from './Cart.module.css';
+import { FaTrashCan } from "react-icons/fa6";
 
-function Cart({ purchasedItem }) {
+
+function deleteItem(purchasedItem, setPurchasedItem, index) {
+    purchasedItem.splice(index, 1);
+    setPurchasedItem([...purchasedItem]);
+}
+
+
+function Cart({ setPurchasedItem, purchasedItem }) {
 
     let subtotal = purchasedItem.reduce(
         (price, item) => price + (item["price"] * item["amount"]),
@@ -24,16 +32,18 @@ function Cart({ purchasedItem }) {
                         <div className={styles["items"]}>
                             {purchasedItem.map((item, index) => {
                                 return (
-
                                     <div key={index} className={styles["item"]}>
-                                        <div className={styles["product-image-container"]}>
-                                            <img className={styles["product-image"]} src={item.image} alt="product item" />
+                                        <div className={styles["item-info"]}>
+                                            <div className={styles["product-image-container"]}>
+                                                <img className={styles["product-image"]} src={item.image} alt="product item" />
+                                            </div>
+                                            <div>
+                                                <p>{item.title}</p>
+                                                <p>${item.price}</p>
+                                                <p>quantity: {item.amount}</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p>{item.title}</p>
-                                            <p>${item.price}</p>
-                                            <p>quantity: {item.amount}</p>
-                                        </div>
+                                        <span onClick={() => deleteItem(purchasedItem, setPurchasedItem, index)} className={styles["delete-item"]}><FaTrashCan size={20} /></span>
                                     </div>
                                 );
                             })}

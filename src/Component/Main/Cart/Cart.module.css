@@ -40,8 +40,21 @@
 .item {
     display: flex;
     gap: 12px;
+    justify-content: space-between;
     padding-bottom: 12px;
     border-bottom: 1px solid #d7d7d7;
+}
+
+.item-info {
+    display: flex;
+    gap: 12px;
+}
+
+.delete-item {
+    display: flex;
+    flex-direction: column-reverse;
+    cursor: pointer;
+    color: #ff7e5f;
 }
 
 .product-image-container {
