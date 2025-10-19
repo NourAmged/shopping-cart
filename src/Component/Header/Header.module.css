@@ -57,3 +57,23 @@ input {
     height: 18px;
     place-content: center;
 }
+
+.drawer {
+    padding-left: 26px;
+    cursor: pointer;
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        justify-content: space-between;
+    }
+
+    .header-content {
+        display: none;
+    }   
+
+    .drawer {
+        display: inline;
+    }
+}
