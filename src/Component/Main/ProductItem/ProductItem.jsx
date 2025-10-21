@@ -2,18 +2,20 @@ import styles from "./ProductItem.module.css";
 import addToCart from "../Home/addToCart";
 import { useRef } from "react";
 
-function ProductItem({setPurchasedItem, purchasedItem, selectedItem }) {
+function ProductItem({ setPurchasedItem, purchasedItem, selectedItem }) {
 
     const quantityRef = useRef(1);
 
     return (
         <>
             <div className={styles["product-item"]}>
-                <nav>
-                    Home &#8594; Shop &#8594; {selectedItem["title"]}
-                </nav>
-                <div className={styles["product-img-container"]}>
-                    <img src={selectedItem["image"]} className={styles["product-img"]} />
+                <div style={{width: "100%"}}>
+                    <nav style={{ paddingBottom: "22px" }}>
+                        Home &#8594; Shop &#8594; {selectedItem["title"]}
+                    </nav>
+                    <div className={styles["product-img-container"]}>
+                        <img src={selectedItem["image"]} className={styles["product-img"]} />
+                    </div>
                 </div>
                 <div className={styles["product-information"]}>
                     <p className={styles["product-title"]}>{selectedItem["title"]}</p>
@@ -43,13 +45,13 @@ function ProductItem({setPurchasedItem, purchasedItem, selectedItem }) {
                         </div>
                     </div>
                     <div>
-                        <input className={styles["add-quantity"]} type="number" min="1" max="5" placeholder="1" ref = {quantityRef}/>
+                        <input className={styles["add-quantity"]} type="number" min="1" max="5" placeholder="1" ref={quantityRef} />
                         <button className={styles["add-cart"]} onClick={(e) => {
-                            e.stopPropagation(); 
+                            e.stopPropagation();
                             const quantity = Number(quantityRef.current.value) || 1;
                             addToCart(setPurchasedItem, purchasedItem, selectedItem, quantity);
                         }
-                    }>Add to Cart</button>
+                        }>Add to Cart</button>
                     </div>
                 </div>
             </div >
