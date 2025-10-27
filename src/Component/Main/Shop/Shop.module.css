@@ -1,0 +1,24 @@
+.shop-container {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    flex-wrap: wrap;
+    padding: 2rem 1rem;
+    gap: 2rem;
+
+}
+
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eaeaeaea;
+    padding: 1.2rem;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.category-container {
+    display: flex;
+    flex-direction: column;
+}

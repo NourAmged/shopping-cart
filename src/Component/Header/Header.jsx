@@ -24,7 +24,7 @@ function Header({ purchasedItem }) {
                 <div style={{ display: "flex", gap: "12px" }}>
                     <div className={styles["header-content"]}>
                         <button className={styles["home-btn"]} onClick={() => navigate("/")}>Home</button>
-                        <button className={styles["shop-btn"]}>Shop</button>
+                        <button className={styles["shop-btn"]} onClick={() => navigate("/shop")}>Shop</button>
                         <button className={styles["about-btn"]}>About</button>
                         <input type="text" placeholder="Search products..." />
                     </div>
