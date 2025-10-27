@@ -3,7 +3,6 @@
     flex-direction: column;
     width: 70%;
     flex-wrap: wrap;
-    padding: 2rem 1rem;
     gap: 2rem;
 
 }
@@ -16,9 +15,44 @@
     padding: 1.2rem;
     border-radius: 8px;
     background: #fff;
+    max-width: 200px;
+}
+
+.filter{
+    font-size: 1.3em;
+    font-weight: 550;
+    padding-bottom: 4px;
+    margin-bottom: 22px;
+    border-bottom: 2px solid #eaeaeaea;
+}
+
+.category, .price {
+    font-size: 1em;
+    font-weight: 500;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eaeaeaea;
+    width: fit-content;
 }
 
 .category-container {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.category-container label {
+    padding-left: 6px;
+}
+
+.price{
+    margin: 22px 0 22px 0;
+}
+
+.price-controller{
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-controller input {
+    width: 65px;
 }
