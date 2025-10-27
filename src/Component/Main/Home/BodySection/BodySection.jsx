@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router';
 
 
 
-function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem }) {
+function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem, myStyle = {} }) {
     const navigate = useNavigate();
 
     return (
-        <div className={styles["product"]} onClick={() => { setSelectedItem(item); navigate('/shop/item') }}>
+        <div className={`${styles["product"]} ${myStyle.product || ""}`} onClick={() => { setSelectedItem(item); navigate('/shop/item') }}>
             <div>
                 <img src={item["image"]} alt="product" />
             </div>
@@ -47,4 +47,4 @@ function BodySection({ data, setSelectedItem, setPurchasedItem, purchasedItem })
     );
 }
 
-export default BodySection;
+export { BodySection, Product };

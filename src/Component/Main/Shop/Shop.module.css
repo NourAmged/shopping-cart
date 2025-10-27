@@ -7,10 +7,15 @@
 
 }
 
+.container {
+    display: flex;
+    gap: 44px;
+}
 
 .filter-container {
-    display: flex;
-    flex-direction: column;
+    position: sticky;
+    top: 5rem;
+    height: fit-content;
     border: 1px solid #eaeaeaea;
     padding: 1.2rem;
     border-radius: 8px;
@@ -18,7 +23,7 @@
     max-width: 200px;
 }
 
-.filter{
+.filter {
     font-size: 1.3em;
     font-weight: 550;
     padding-bottom: 4px;
@@ -26,7 +31,8 @@
     border-bottom: 2px solid #eaeaeaea;
 }
 
-.category, .price {
+.category,
+.price {
     font-size: 1em;
     font-weight: 500;
     padding-bottom: 4px;
@@ -44,15 +50,33 @@
     padding-left: 6px;
 }
 
-.price{
+.price {
     margin: 22px 0 22px 0;
 }
 
-.price-controller{
+.price-controller {
     display: flex;
     justify-content: space-between;
 }
 
 .price-controller input {
     width: 65px;
+}
+
+.product img {
+    max-width: 130px;
+}
+
+.product div {
+    height: 300px;
+}
+
+.product {
+    max-width: 230px;
+}
+
+.display-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
 }

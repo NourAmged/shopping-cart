@@ -33,7 +33,7 @@ nav {
     border: 2px solid #ff7e5f;
     border-radius: 5px;
     padding: 22px;
-    max-height: 90%;
+    height: 85%;
 }
 
 .product-img {
@@ -176,6 +176,6 @@ nav {
 @media screen and (max-width: 768px) {
     .product-item {
         flex-wrap: wrap;
-        
+
     }
 }

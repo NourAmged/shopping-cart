@@ -2,7 +2,7 @@ import styles from "./Main.module.css";
 import { useEffect, useState } from "react";
 import fetchData from "./fetchData";
 import HeaderSection from "./HeaderSection/HeaderSection";
-import BodySection from "./BodySection/BodySection";
+import { BodySection } from "./BodySection/BodySection";
 import ProductItem from "../ProductItem/ProductItem";
 import Shop from "../Shop/Shop";
 import Cart from "../Cart/Cart";
@@ -29,7 +29,7 @@ function Main({ purchasedItem, setPurchasedItem }) {
                         <BodySection data={data} setSelectedItem={setSelectedItem} setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} />
                     </>} />
                 <Route path="/shop/item" element={<ProductItem setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} selectedItem={selectedItem} />} />
-                <Route path="/shop" element={<Shop />} />
+                <Route path="/shop" element={<Shop data={data} setSelectedItem={setSelectedItem} setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} />} />
                 <Route path="/cart" element={<Cart setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} />} />
             </Routes>
         </main>
