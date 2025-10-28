@@ -42,7 +42,7 @@ function Header({ purchasedItem }) {
             </header>
             {mobileNav ? <nav className={styles["mobile-header"]}>
                 <button className={styles["home-btn"]} onClick={() => navigate("/")}>Home</button>
-                <button className={styles["shop-btn"]}>Shop</button>
+                <button className={styles["shop-btn"]} onClick={() => navigate("/shop")}>Shop</button>
                 <button className={styles["about-btn"]}>About</button>
                 <input type="text" placeholder="Search products..." />
             </nav> : ""}
