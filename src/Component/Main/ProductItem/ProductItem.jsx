@@ -1,17 +1,18 @@
 import styles from "./ProductItem.module.css";
 import addToCart from "../Home/addToCart";
 import { useRef } from "react";
+import { useNavigate } from "react-router";
 
 function ProductItem({ setPurchasedItem, purchasedItem, selectedItem }) {
-
+    const navigate = useNavigate();
     const quantityRef = useRef(1);
 
     return (
         <>
             <div className={styles["product-item"]}>
-                <div style={{width: "100%"}}>
+                <div style={{ width: "100%" }}>
                     <nav style={{ paddingBottom: "22px" }}>
-                        Home &#8594; Shop &#8594; {selectedItem["title"]}
+                        <span style={{cursor: "pointer"}} onClick={() => navigate("/")}>Home</span> &#8594; <span style={{cursor: "pointer"}} onClick={() => navigate("/shop")}>Shop</span> &#8594; {selectedItem["title"]}
                     </nav>
                     <div className={styles["product-img-container"]}>
                         <img src={selectedItem["image"]} className={styles["product-img"]} />

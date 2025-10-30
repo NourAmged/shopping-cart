@@ -4,9 +4,12 @@ import { useNavigate } from 'react-router';
 
 
 
-function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem, myStyle = {} }) {
-    const navigate = useNavigate();
 
+
+function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem, myStyle = {} }) {
+
+    const navigate = useNavigate();
+    
     return (
         <div className={`${styles["product"]} ${myStyle.product || ""}`} onClick={() => { setSelectedItem(item); navigate('/shop/item') }}>
             <div>
@@ -20,6 +23,8 @@ function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem, mySty
 }
 
 function BodySection({ data, setSelectedItem, setPurchasedItem, purchasedItem }) {
+
+    const navigate = useNavigate();
 
     return (
         <section className={styles["body-section"]}>
@@ -39,7 +44,7 @@ function BodySection({ data, setSelectedItem, setPurchasedItem, purchasedItem })
             </div>
             <div className={styles["discount-container"]}>
                 <p>Get 20% Off Your First Order</p>
-                <button className={styles["shopping-btn"]}>
+                <button className={styles["shopping-btn"]} onClick={() => navigate("/shop")}>
                     Start Shopping
                 </button>
             </div>

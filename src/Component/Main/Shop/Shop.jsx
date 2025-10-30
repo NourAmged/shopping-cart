@@ -1,11 +1,14 @@
 import styles from "./Shop.module.css";
 import { Product } from "../Home/BodySection/BodySection";
+import { useNavigate } from "react-router";
 
 function Shop({ data, setSelectedItem, setPurchasedItem, purchasedItem }) {
+    const navigate = useNavigate();
+
     return (
         <div className={styles["shop-container"]}>
             <nav>
-                Home &#8594; Shop
+                <span style={{ cursor: "pointer" }} onClick={() => { navigate("/") }}>Home</span> &#8594; Shop
             </nav>
             <div className={styles["container"]}>
                 <div className={styles["filter-container"]}>

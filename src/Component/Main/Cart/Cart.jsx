@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router';
 import styles from './Cart.module.css';
 import { FaTrashCan } from "react-icons/fa6";
 
@@ -9,6 +10,8 @@ function deleteItem(purchasedItem, setPurchasedItem, index) {
 
 
 function Cart({ setPurchasedItem, purchasedItem }) {
+
+    const navigate = useNavigate();
 
     let subtotal = purchasedItem.reduce(
         (price, item) => price + (item["price"] * item["amount"]),
@@ -74,7 +77,7 @@ function Cart({ setPurchasedItem, purchasedItem }) {
                     :
                     <div className={styles["no-items"]}>
                         <p>your shoping cart is empty</p>
-                        <button className={styles["shopping-btn"]}>Continue Shopping</button>
+                        <button className={styles["shopping-btn"]} onClick={() => navigate("/shop")}>Continue Shopping</button>
                     </div>
             }
         </div>
