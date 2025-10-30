@@ -26,7 +26,7 @@ function Cart({ setPurchasedItem, purchasedItem }) {
     return (
         <div className={styles["cart"]}>
             <nav>
-                Home &#8594; Cart
+                <span style={{cursor:"pointer"}} onClick={() => navigate("/")}>Home</span> &#8594; Cart
             </nav>
             <p style={{ fontSize: "1.5em", fontWeight: "550" }}>Your Shoping Cart</p>
             {
