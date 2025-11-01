@@ -12,6 +12,7 @@ function Main({ purchasedItem, setPurchasedItem }) {
     const [data, setData] = useState(null);
     const [selectedItem, setSelectedItem] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [defaultCategory, setDefaultCategory] = useState(undefined);
 
     useEffect(() => {
         fetchData(setData, setLoading);
@@ -26,10 +27,10 @@ function Main({ purchasedItem, setPurchasedItem }) {
                 <Route path="/" element={
                     <>
                         <HeaderSection />
-                        <BodySection data={data} setSelectedItem={setSelectedItem} setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} />
+                        <BodySection data={data} setSelectedItem={setSelectedItem} setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} setDefaultCategory={setDefaultCategory} />
                     </>} />
                 <Route path="/shop/item" element={<ProductItem setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} selectedItem={selectedItem} />} />
-                <Route path="/shop" element={<Shop data={data} setSelectedItem={setSelectedItem} setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} />} />
+                <Route path="/shop" element={<Shop data={data} setSelectedItem={setSelectedItem} setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} defaultCategory={defaultCategory} />} />
                 <Route path="/cart" element={<Cart setPurchasedItem={setPurchasedItem} purchasedItem={purchasedItem} />} />
             </Routes>
         </main>

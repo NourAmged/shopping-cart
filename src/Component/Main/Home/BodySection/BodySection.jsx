@@ -1,15 +1,13 @@
 import styles from "./BodySection.module.css";
 import addToCart from "../addToCart";
 import { useNavigate } from 'react-router';
-
-
-
+import { useState } from "react";
 
 
 function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem, myStyle = {} }) {
 
     const navigate = useNavigate();
-    
+
     return (
         <div className={`${styles["product"]} ${myStyle.product || ""}`} onClick={() => { setSelectedItem(item); navigate('/shop/item') }}>
             <div>
@@ -22,7 +20,7 @@ function Product({ item, setSelectedItem, setPurchasedItem, purchasedItem, mySty
     );
 }
 
-function BodySection({ data, setSelectedItem, setPurchasedItem, purchasedItem }) {
+function BodySection({ data, setSelectedItem, setPurchasedItem, purchasedItem, setDefaultCategory }) {
 
     const navigate = useNavigate();
 
@@ -37,10 +35,10 @@ function BodySection({ data, setSelectedItem, setPurchasedItem, purchasedItem })
             </div>
             <h2>Shop by Category</h2>
             <div className={styles["category-container"]}>
-                <button className={styles["category-btn"]}>Men</button>
-                <button className={styles["category-btn"]}>Women</button>
-                <button className={styles["category-btn"]}>Accessories</button>
-                <button className={styles["category-btn"]}>Electronics</button>
+                <button className={styles["category-btn"]} onClick={() => { setDefaultCategory("men's clothing"); navigate("/shop") }} >Men</button>
+                <button className={styles["category-btn"]} onClick={() => { setDefaultCategory("women's clothing"); navigate("/shop") }}>Women</button>
+                <button className={styles["category-btn"]} onClick={() => { setDefaultCategory("jewelery"); navigate("/shop") }}>Accessories</button>
+                <button className={styles["category-btn"]} onClick={() => { setDefaultCategory("electronics"); navigate("/shop") }}>Electronics</button>
             </div>
             <div className={styles["discount-container"]}>
                 <p>Get 20% Off Your First Order</p>
